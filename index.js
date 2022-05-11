@@ -62,3 +62,78 @@ user.name = 'Emily';
 
 //Again check the value of 'name' property
 console.log(user.name); //Emily
+
+// ******************************************************
+// Getters and setters as property wrappers
+// ******************************************************
+
+const car = {
+  //add properties, prefixed with '_'
+  _make: 'BMW',
+  _model: 'i8',
+  _year: '2021',
+
+  //create getter method for '_make'
+  get getMake() {
+    return this._make;
+  },
+
+  //create setter method for '_make'
+  set setMake(carMake) {
+    if (typeof carMake === 'string' && carMake.length > 0) {
+      this._make = carMake;
+    }
+  },
+
+  //getter method for '_model'
+  get getModel() {
+    return this._model;
+  },
+
+  //setter method for '_model'
+  set setModel(carModel) {
+    if (typeof carModel === 'string' && carModel.length > 0) {
+      this._model = carModel;
+    }
+  },
+
+  //getter method for '_year'
+  get getYear() {
+    return this._year;
+  },
+
+  //setter method for '_year'
+  set setYear(carYear) {
+    if (typeof carYear === 'string' && carYear.length > 0) {
+      this._year = carYear;
+    }
+  },
+};
+
+//Getting existing car properties
+//execute getter methods
+console.log(car.getMake); //BMW
+console.log(car.getModel); //i8
+console.log(car.getYear); //2021
+
+//Change some properties
+//Execute setter methods
+car.setMake = 'Tesla';
+car.setModel = 'Suv';
+
+//Getting new properties of car object
+console.log(car.getMake); //Tesla
+console.log(car.getModel); //Suv
+
+//Try to change without setter method
+car.make = 'Nissan'; //it is creating new property of car, but not changing '_make' property
+console.log(car.getMake); //Tesla  -->not Nissan??
+console.log(car);
+/*
+{ 
+  make: "Nissan", 
+  _make: "Tesla", 
+  _model: "Suv",
+  _year: "2021" 
+}
+*/

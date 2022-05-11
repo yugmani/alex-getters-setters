@@ -74,6 +74,46 @@
       </li>
       <li>
         <h3>Getters and setters as property wrappers</h3>
+        <ol>
+          <li>
+            We use getters and setters to <mark>restrict changes</mark> to
+            property values. For example, we can reject change of a string value
+            if new value is not a string. Or reject the change if the new string
+            is empty as shown in the previous example.
+          </li>
+          <li>
+            As shown in the previous example, one use case for getter and setter
+            methods is an <em>if ... else</em> statement to dynamically check
+            the new value before someone access them and/or overrides the old
+            value.
+          </li>
+          <li>
+            Unfortunately, we can't create getter or setter with the same name
+            as existing property. So, you may change the name of those original
+            properties to may be less user-friendly and use user-friendly names
+            for getter and setter methods.
+          </li>
+          <li>
+            A well known <em>convention</em> in programming to start property
+            name with an <em>underscore( _ )</em> to mark it as
+            <em>internal</em> meaning
+            <mark>no one should use it directly from outside the object</mark>.
+            We use this convention with properties for which we want to add
+            getters and setters.
+          </li>
+          <li>
+            Therefore, first prefix all properties that will have getter and
+            setter methods with underscore.
+          </li>
+          <li>
+            Second, create property getters and setters with the same names, but
+            now without the underscore prefix.
+          </li>
+          <li>
+            This will give us properties with friendly names that we have more
+            control over.
+          </li>
+        </ol>
       </li>
       <li></li>
       <li></li>
