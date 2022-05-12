@@ -115,7 +115,52 @@
           </li>
         </ol>
       </li>
-      <li></li>
+      <li>
+        <h3>Creating getters and setters on the go</h3>
+        <ol>
+          <li>
+            <em><mark>Object.defineProperty()</mark></em> is a way to add getter
+            and setter methods to an object that already exists.
+          </li>
+          <li>
+            This method allows you to add new properties to objects or change
+            existing.
+          </li>
+          <li>
+            Using this we can add or change accessor properties, property
+            getters and setters.
+          </li>
+          <li>
+            <p>
+              While using <em>defineProperty()</em> we pass in three parameters.
+            </p>
+            <ol style="list-style-type: lower-alpha">
+              <li>
+                The <em>first argument</em> is the object we want to update.
+              </li>
+              <li>
+                The <em>second parameter</em> is the property we want to add or
+                change. In the case of property getters and setters, it is the
+                property for which we want to add getter and/or setter method.
+              </li>
+              <li>
+                The <em>last parameter</em> is for object with descriptors, such
+                as enumerable, configurable, value and so on. In the case of
+                getters and setters, we replace the object with descriptors with
+                an object containing the getter and setter method.
+              </li>
+              <li>
+                In this case, the syntax for both, getter and setter is almost
+                same as in previous examples. Only the difference is
+                <code style="background-color: lightgray"
+                  >missing of method names.</code
+                >
+              </li>
+            </ol>
+          </li>
+          <li></li>
+        </ol>
+      </li>
       <li></li>
       <li></li>
     </ul>

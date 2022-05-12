@@ -137,3 +137,89 @@ console.log(car);
   _year: "2021" 
 }
 */
+
+// ***************************************************** */
+// Creating getters and setters on the go
+// ***************************************************** */
+
+//create an object
+const book = {
+  _title: 'Six of Crows',
+  _author: 'Leigh Bardugo',
+  _pubDate: 'February 6, 2018',
+};
+
+//Add getter and setter for title
+//Parameter 1: object to update
+//Parameter 2: property to add/update
+//Parameter 3: object containing getter and setter
+Object.defineProperty(book, 'title', {
+  get() {
+    return this._title;
+  },
+  set(newTitle) {
+    if (typeof newTitle === 'string' && newTitle.length > 0) {
+      this._title = newTitle;
+    }
+  },
+});
+
+//Add getter and setter for author
+//Parameter 1: object to update
+//Parameter 2: property to add/update
+//Parameter 3: object containing getter and setter
+Object.defineProperty(book, 'author', {
+  get() {
+    return this._author;
+  },
+  set(newAuthor) {
+    if (typeof newAuthor === 'string' && newAuthor.length > 0) {
+      this._author = newAuthor;
+    }
+  },
+});
+
+//Add getter and setter for pubDate
+//Parameter 1: object to update
+//Parameter 2: property to add/update
+//parameter 3: object containing getter and setter
+Object.defineProperty(book, 'pubDate', {
+  get() {
+    return this._pubDate;
+  },
+  set(newPubDate) {
+    if (typeof newPubDate === 'string' && newPubDate.length > 0) {
+      this._pubDate = newPubDate;
+    }
+  },
+});
+
+// ***************** Get Current Book Data *********************
+
+// get current book title: this executes the getter method for 'title'
+console.log(book.title); //Six of Crows
+
+//Get current book author
+//This executes the getter method for 'author'
+console.log(book.author); //Leigh Bardugo
+
+//Get current book publication date
+//This executes the getter method for 'pubDate'
+console.log(book.pubDate); //February 6, 2018
+
+//*************** Change Book Data *************** */
+
+//This executes the setter method for 'title'
+book.title = 'Red Rising';
+
+//This executes the setter method for 'author'
+book.author = 'Pierce Brown';
+
+//This executes the setter method for 'pubDate'
+book.pubDate = 'January 28, 2014';
+
+//Get new update book data
+
+console.log(book.title); //Red Rising
+console.log(book.author); //Pierce Brown
+console.log(book.pubDate); //January 28, 2014
